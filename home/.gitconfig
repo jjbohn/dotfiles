@@ -1,0 +1,41 @@
+[user]
+  name = John Bohn
+  email = jjbohn@gmail.com
+[core]
+  excludesfile = /opt/boxen/config/git/gitignore
+  autocrlf = input
+  sparseCheckout = on
+  editor = /usr/bin/vim
+[color]
+  ui = true
+[alias]
+  ribbon = tag --force _ribbon origin/develop
+  catchup = log --patch --reverse --topo-order _ribbon..origin/develop
+  s = status -s
+  d = diff --word-diff
+  ch = checkout
+  p = pull
+  amend = commit --amend
+  last = log -1
+  wtf = "!git diff $1^ $1"
+  psuh = push
+  cherry-pic = cherry-pick
+  cp = cherry-pick
+  c = commit
+  diff = diff --word-diff
+  rh = reset --hard
+  r = reset
+  undo = reset --mixed HEAD~1
+  stastus = status
+  pr = pull-request
+# re re re
+[push]
+	default = nothing
+
+[credential]
+  helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+  protocol = https
+[github]
+	user = jjbohn

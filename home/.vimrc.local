@@ -1,0 +1,49 @@
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd BufWritePre * :%s/\s\+$//e
+imap <Leader>t <Esc>:tabnew<CR>
+set expandtab
+set tabstop=2
+set shiftwidth=2
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+map <Leader>. :bp<CR>
+map <Leader>/ :bn<CR>
+map <Leader>l :bd<CR>
+map <C-H> :bp<CR>
+map <C-L> :bn<CR>
+map <Leader>d :bd<CR>
+map <C-c> <Leader>c<space>
+
+map <Leader><C-r> gg=G
+nmap <Space> a_<Esc>r
+
+imap <C-L> <CR><Esc>O
+set t_Co=256
+au FileType json setlocal equalprg=python\ -m\ json.tool
+
+:abbr req require<CR>
+
+let g:airline#extensions#tabline#enabled = 1
+
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+set listchars=tab:>~,nbsp:_,trail:.
+set list
+
+set grepprg=zsh\ -c\ 'grep\ -nH\ $*'
+
+:silent exe "g:flog_enable"
+
+autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
+
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
