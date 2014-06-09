@@ -47,3 +47,8 @@ autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
 
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
+
+colorscheme solarized
+set background=dark
+
+set clipboard=unnamed

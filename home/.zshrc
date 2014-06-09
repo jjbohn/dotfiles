@@ -16,6 +16,11 @@ alias c="clear"
 alias l="ls -alh"
 alias r="rake"
 
+# Git aliases
+alias gs="git s"
+alias gd="git diff"
+alias gp="git push"
+
 # AWS aliases
 alias din="aws ec2 describe-instances --instance-id"
 alias das="aws autoscaling describe-auto-scaling-groups --auto-scaling-group"
@@ -26,6 +31,9 @@ alias eal="aws cloudwatch enable-alarm-actions --alarm-names"
 alias tin="aws autoscaling terminate-instance-in-auto-scaling-group --no-should-decrement-desired-capacity --instance-id"
 alias tiny="aws autoscaling terminate-instance-in-auto-scaling-group --should-decrement-desired-capacity --instance-id"
 alias dlc="aws autoscaling describe-launch-configurations --launch-configuration-name"
+
+# Work aliases
+alias as="~/src/alphasights/"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -45,10 +53,9 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew github vagrant heroku ruby rails knife bundler)
+plugins=(git brew github vagrant heroku ruby rails bundler)
 
 source /opt/boxen/env.sh
-source ~/.bin/tmuxinator.zsh
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
