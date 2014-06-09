@@ -30,7 +30,7 @@
   pr = pull-request
 # re re re
 [push]
-	default = nothing
+  default = nothing
 
 [credential]
   helper = /opt/boxen/bin/boxen-git-credential
@@ -38,4 +38,4 @@
 [hub]
   protocol = https
 [github]
-	user = jjbohn
+  user = jjbohn
