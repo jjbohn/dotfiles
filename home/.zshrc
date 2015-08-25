@@ -15,11 +15,29 @@ alias http="python -m SimpleHTTPServer"
 alias c="clear"
 alias l="ls -alh"
 alias r="rake"
+alias src="source ~/.zshrc"
 
 # Git aliases
+alias g="git"
+alias gf="git fetch"
+alias gm="git merge"
+alias gfm="git fetch; git merge"
 alias gs="git s"
 alias gd="git diff"
 alias gp="git push"
+alias gap="git add --patch"
+alias gmas="git checkout master"
+alias gre="git reset --hard"
+alias grem="git reset --mixed"
+
+# Rails aliases
+alias mig="bundle exec rake db:migrate; RAILS_ENV=test rake db:migrate"
+alias rol="bundle exec rake db:rollback; RAILS_ENV=test rake db:rollback"
+alias rs="bundle exec rails server"
+for i in {3000..3010}; do
+  alias $i="rails s -p $i -b 0.0.0.0"
+done
+
 
 # AWS aliases
 alias din="aws ec2 describe-instances --instance-id"
@@ -53,7 +71,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew github vagrant heroku ruby rails bundler)
+plugins=(last-working-dir brew github vagrant heroku ruby rails docker bundler common-aliases)
 
 source /opt/boxen/env.sh
 source $ZSH/oh-my-zsh.sh
@@ -62,8 +80,9 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 # Paths
 export GOPATH=$HOME/go
-export PATH=/usr/local/heroku/bin:$GOPATH/bin:$PATH
+export PATH=/usr/local/heroku/bin:$GOPATH/bin:/usr/local/erlang/bin:/usr/local/elixir/bin:$PATH
 export LIBRARY_PATH=/opt/boxen/homebrew/lib:$LIBRARY_PATH
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -71,3 +90,12 @@ export EDITOR="vim"
 export SHELL="zsh"
 export TERM="xterm-256color"
 alias tmux="tmux -2"
+alias :q=exit
+alias :Q=exit
+alias got=git
+alias bundkle=bundle
+
+source `brew --prefix`/etc/profile.d/z.sh
+
+export FLEETCTL_TUNNEL=127.0.0.1:2222
+export DOCKER_HOST=tcp://127.0.0.1:2375

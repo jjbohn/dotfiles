@@ -39,3 +39,5 @@
   protocol = https
 [github]
   user = jjbohn
+[rerere]
+  enabled = true
